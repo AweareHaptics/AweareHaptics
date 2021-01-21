@@ -60,11 +60,11 @@ _(pour le lien mettez simplement l'URL de votre projets suivi de ``/tags``)_
 ## Auteurs
 
 * [**Guicharnaud Léo**](https://github.com/Lightman31)
-* [**Buot Adrien** ](https://github.com/outout14)
-* [**terre Mikhali** ](https://github.com/outout14)
-* [**Sabatey Clara** ](https://github.com/outout14)
-* [**Noiraux Coline** ](https://github.com/outout14)
-* [**Beurotte Marine** ](https://github.com/outout14)
+* [**Buot Adrien** ](https://github.com/Bubu781 )
+* [**terre Mikhali** ](https://github.com/Mikhali)
+* [**Sabatey Clara** ](https://github.com/clarasbty)
+* [**Noiraux Coline** ](https://github.com/NoireauxColine)
+* [**Beurotte Marine** ](https://github.com/mama98)
 
 Lisez la liste des [contributeurs](https://github.com/your/project/contributors) pour voir qui à aidé au projet !
 
