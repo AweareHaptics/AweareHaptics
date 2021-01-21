@@ -1,4 +1,4 @@
-#include "sensors.hpp"
+#include "./Sensors/sensors.hpp"
 #define NB_SENSORS 2
 
 // Set these to your desired credentials.
@@ -8,14 +8,11 @@ WiFiServer wifiServer(80);
 
 Sensor *sensors[NB_SENSORS];
 
-
 void setup() {
   Serial.begin(115200);                   // To enable Serial Commmunication with connected esp32 board
   Serial.println();
   Serial.println("Configuring access point...");
   WiFi.mode(WIFI_AP);                    // Changing ESP32 wifi mode to AccessPoint
-  sensors[0] = new Sensor(0,27,0x30);
-  sensors[1] = new Sensor(1,14,0x31);
 
   // You can remove the Appassword parameter if you want the hotspot to be open.
   WiFi.softAP(Apssid, Appassword);      //Starting AccessPoint on given credential
@@ -23,6 +20,8 @@ void setup() {
   Serial.print("AP IP address: ");
   Serial.println(myIP);                //Default IP is 192.168.4.1
   wifiServer.begin();
+  sensors[0] = new SensorShort(0,27,0x30);
+  sensors[1] = new SensorShort(1,14,0x31);
   for(int i = 0; i < NB_SENSORS; i++)
     sensors[i]->init();
 }
@@ -31,10 +30,11 @@ void loop() {
   WiFiClient client = wifiServer.available();
  
   if (client) {
- 
+    for(int i = 0; i < NB_SENSORS; i++)
+      sensors[i]->setClient(client);
     while (client.connected()) {
       for(int i = 0; i < NB_SENSORS; i++)
-        sensors[i]->readSensor(client);
+        sensors[i]->readSensor();
  
       delay(10);
     }

@@ -6,19 +6,53 @@ typedef enum SensorState{
     MEDIUMENERGY = 2,
     HIGHENERGY = 3
 }typeState_t;
+
 class Sensor{
-    private:
+private:
+    WiFiClient client;
     int id;
+
+    void sendToActuator();
+
+protected:
     int address;
     int pin;
     typeState_t state;
-    Adafruit_VL53L0X lox = Adafruit_VL53L0X();
 
-    void setState(typeState_t state, WiFiClient client);
-    void sendToActuator(WiFiClient client);
+    void setState(typeState_t state);
 
-    public:
+public:
     Sensor(int id, int pin, int address);
     void init();
-    void readSensor(WiFiClient client);
+    void setClient(WiFiClient client);
+    void readSensor();
+};
+
+class SensorShort : public Sensor{
+private:
+    Adafruit_VL53L0X lox = Adafruit_VL53L0X();
+
+public:
+    SensorShort(int id, int pin, int address);
+    void init();
+    void readSensor();
+};
+
+class SensorLong : public Sensor{
+public:
+    SensorLong(int id, int pin, int address);
+    void init();
+    void readSensor();
+};
+
+class SensorBottom : public SensorShort{
+public:
+    SensorBottom(int id, int pin, int address);
+    void readSensor();
+};
+
+class SensorTop : public SensorShort{
+public:
+    SensorTop(int id, int pin, int address);
+    void readSensor();
 };
