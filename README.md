@@ -59,7 +59,7 @@ _(pour le lien mettez simplement l'URL de votre projets suivi de ``/tags``)_
 
 ## Auteurs
 
-* [**Guicharnaud Léo**](https://github.com/outout14)
+* [**Guicharnaud Léo**](https://github.com/Lightman31)
 * [**Buot Adrien** ](https://github.com/outout14)
 * [**terre Mikhali** ](https://github.com/outout14)
 * [**Sabatey Clara** ](https://github.com/outout14)
