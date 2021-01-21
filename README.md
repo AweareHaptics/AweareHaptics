@@ -28,10 +28,10 @@ Dites comment faire pour lancer votre projet
 pour cette étape vous aurez besoin comme maériel pour chaque moteur :
 
 - faire faire un pcb néomotor : le fichier brd est dans le repo
-- résistance 10Ω boitier 0805 : [lien vers une référence fabriquant](https://fr.rs-online.com/web/p/resistances-cms/6790825/)
-- résistance 100Ω boitier 0805 : [lien vers une référence fabriquant](https://fr.rs-online.com/web/p/resistances-cms/7408978/)
-- résistance 442Ω boitier 0805 : [lien vers une référence fabriquant](https://fr.rs-online.com/web/p/resistances-cms/7086023/)
-- résistance 4KΩ boitier 0805 : [lien vers une référence fabriquant](https://fr.rs-online.com/web/p/resistances-cms/6791471/)
+- résistance 10Ω boitier 0805 : [référence fabriquant : CRCW080510R0FKEA](https://fr.rs-online.com/web/p/resistances-cms/6790825/)
+- résistance 100Ω boitier 0805 : [référence fabriquant : CR0805-FX-1000ELF](https://fr.rs-online.com/web/p/resistances-cms/7408978/)
+- résistance 442Ω boitier 0805 : [référence fabriquant : ERA6AEB4420V](https://fr.rs-online.com/web/p/resistances-cms/7086023/)
+- résistance 4KΩ boitier 0805 : [référence fabriquant : CRCW08054K02FKEA](https://fr.rs-online.com/web/p/resistances-cms/6791471/)
 - Condensateur type 104 : 10nF, boitier 0805 : [lien vers une référence fabriquant]
 
  
