@@ -1,5 +1,4 @@
 # AweareAptics
-_(juste en dessous des badges sympatiques à placer)_
 
 [![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/built-by-developers.svg)](http://forthebadge.com) [![forthebadge](http://forthebadge.com/images/badges/powered-by-electricity.svg)](http://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/cc-nc-sa.svg)](http://forthebadge.com)
 
@@ -31,7 +30,7 @@ pour cette étape vous aurez besoin comme maériel pour chaque moteur :
 - résistance 10Ω boitier 0805 : [référence fabriquant : CRCW080510R0FKEA](https://fr.rs-online.com/web/p/resistances-cms/6790825/)
 - résistance 100Ω boitier 0805 : [référence fabriquant : CR0805-FX-1000ELF](https://fr.rs-online.com/web/p/resistances-cms/7408978/)
 - résistance 442Ω boitier 0805 : [référence fabriquant : ERA6AEB4420V](https://fr.rs-online.com/web/p/resistances-cms/7086023/)
-- résistance 4KΩ boitier 0805 : [lien vers une référence fabriquant(https://fr.rs-online.com/web/p/resistances-cms/6791471/)
+- résistance 4KΩ boitier 0805 : [référence fabriquant : CRCW08054K02FKEA](https://fr.rs-online.com/web/p/resistances-cms/6791471/)
 - Condensateur type 104 : 10nF, boitier 0805 : [référence fabriquant : CC0805KRX7R9BB103](https://fr.rs-online.com/web/p/condensateurs-ceramique-multicouches/4614013/)
 - transitor npn simple boitier SOT-32 : [référence fabriquant : MMBT3904LT1G](https://fr.rs-online.com/web/p/transistors-bipolaires-bjt/5450343/)
 
