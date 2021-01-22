@@ -31,13 +31,13 @@ void Sensor::sendToActuator(){
 }
 
 SensorShort::SensorShort(int id, int pin, int address) : Sensor(id, pin, address){
-    pinMode(pin, OUTPUT);
-    digitalWrite(pin, LOW);  
+    pinMode(this->pin, OUTPUT);
+    digitalWrite(this->pin, LOW);  
     delay(10); 
-    digitalWrite(pin, HIGH);
+    digitalWrite(this->pin, HIGH);
     delay(10);
-    digitalWrite(pin, LOW);
-
+    digitalWrite(this->pin, LOW);
+    delay(10);
 }
 
 void SensorShort::init(){
@@ -51,7 +51,6 @@ void SensorShort::init(){
 
 void SensorShort::readSensor(){
     VL53L0X_RangingMeasurementData_t measure;
-    char stringToSend[50];
     this->lox.rangingTest(&measure, false); // pass in 'true' to get debug data printout!
     if(measure.RangeStatus != 4) {
         if(measure.RangeMilliMeter >= 20 && measure.RangeMilliMeter <= 430 && this->state != HIGHENERGY){
