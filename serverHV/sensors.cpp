@@ -68,29 +68,51 @@ void SensorShort::readSensor(){
 }
 
 SensorLong::SensorLong(int id, int pin, int address) : Sensor(id, pin, address){
-
+  this->distanceSensor = SFEVL53L1X(Wire, this->pin);
 }
 
 void SensorLong::init(){
+  Wire.begin();
 
+  this->distanceSensor.sensorOff();
+  this->distanceSensor.sensorOn();
+  this->distanceSensor.setI2CAddress(this->address);
+
+  if (distanceSensor.begin() != 0) //Begin returns 0 on a good init
+  {
+    Serial.println("Sensor failed to begin. Please check wiring. Freezing...");
+    while(1);
+  }
+
+  distanceSensor.setDistanceModeLong();
 }
 
 void SensorLong::readSensor(){
+  distanceSensor.startRanging(); //Write configuration bytes to initiate measurement
+  while (!distanceSensor.checkForDataReady())
+  {
+    delay(1);
+  }
+  int distance = distanceSensor.getDistance(); //Get the result of the measurement from the sensor
+  distanceSensor.clearInterrupt();
+  distanceSensor.stopRanging();
 
+  if(distance <= 3700) {
+    if(distance >= 20 && distance <= 430 && this->state != HIGHENERGY){
+        this->setState(HIGHENERGY);
+    }else if(distance > 430 && distance <= 840 && this->state != MEDIUMENERGY ){
+        this->setState(MEDIUMENERGY);
+    }else if(distance > 840 && distance < 1270 && this->state != LOWENERGY){
+        this->setState(LOWENERGY);
+    }else if(distance > 1270 && this->state != IDLE){
+        this->setState(IDLE);
+    }
+  }else if(this->state != IDLE){
+      this->setState(IDLE);
+  }
 }
 
-SensorBottom::SensorBottom(int id, int pin, int address) : SensorShort(id, pin, address){
-
-}
 
 void SensorBottom::readSensor(){
-
-}
-
-SensorTop::SensorTop(int id, int pin, int address) : SensorShort(id, pin, address){
-
-}
-
-void SensorTop::readSensor(){
 
 }

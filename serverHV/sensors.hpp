@@ -1,5 +1,16 @@
 #include <WiFi.h> 
 #include "Adafruit_VL53L0X.h"
+
+// includes for long range sensors
+#include <ComponentObject.h>
+#include <RangeSensor.h>
+#include <SparkFun_VL53L1X.h>
+#include <vl53l1x_class.h>
+#include <vl53l1_error_codes.h>
+#include <Wire.h>
+#include "SparkFun_VL53L1X.h" //Click here to get the library: http://librarymanager/All#SparkFun_VL53L1X
+
+
 typedef enum SensorState{
     IDLE = 0,
     LOWENERGY = 1,
@@ -39,6 +50,8 @@ public:
 };
 
 class SensorLong : public Sensor{
+protected:
+    SFEVL53L1X distanceSensor;
 public:
     SensorLong(int id, int pin, int address);
     void init();
