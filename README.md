@@ -64,7 +64,7 @@ _(pour le lien mettez simplement l'URL de votre projets suivi de ``/tags``)_
 * **Terre Mikhali**  [@Mikhali](https://github.com/Mikhali)
 * **Sabatey Clara**  [@Clarasbty](https://github.com/clarasbty)
 * **Noireaux Coline**  [@mama98](https://github.com/mama98)
-* **Beurotte Marine**  [@outout14](https://github.com/outout14)
+* **Beurotte Marine**  [@NoireauxColine](https://github.com/NoireauxColine)
 
 Lisez la liste des [contributeurs](https://github.com/your/project/contributors) pour voir qui à aidé au projet !
 
