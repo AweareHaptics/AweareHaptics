@@ -5,7 +5,6 @@
 
 const char *ssid = "Server Movuino";     
 const char *password = "Adrienestsib0";
-const char * host = "192.168.4.1";
 WiFiServer wifiServer(80);
 
 Adafruit_NeoPixel pixels = Adafruit_NeoPixel(NB_ACTUATORS, PIN, NEO_GRB + NEO_KHZ800);
