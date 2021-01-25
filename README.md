@@ -1,4 +1,4 @@
-# AweareAptics
+# AweareHaptics
 
 [![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/built-by-developers.svg)](http://forthebadge.com) [![forthebadge](http://forthebadge.com/images/badges/powered-by-electricity.svg)](http://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/cc-nc-sa.svg)](http://forthebadge.com)
 
@@ -55,20 +55,15 @@ _exemple :_
 **Dernière version stable :** 5.0
 **Dernière version :** 5.1
 Liste des versions : [Cliquer pour afficher](https://github.com/your/project-name/tags)
-_(pour le lien mettez simplement l'URL de votre projets suivi de ``/tags``)_
 
 ## Auteurs
 
-* **Guicharnaud Léo**  [@outout14](https://github.com/outout14)
-* **Buot Adrien**  [@outout14](https://github.com/outout14)
-* **terre Mikhali**  [@outout14](https://github.com/outout14)
-* **Sabatey Clara**  [@outout14](https://github.com/outout14)
-* **Noiraux Coline**  [@outout14](https://github.com/outout14)
-* **Beurotte Marine**  [@outout14](https://github.com/outout14)
-
-Lisez la liste des [contributeurs](https://github.com/your/project/contributors) pour voir qui à aidé au projet !
-
-_(pour le lien mettez simplement l'URL de votre projet suivi de ``/contirubors``)_
+* [**Guicharnaud Léo**](https://github.com/Lightman31)
+* [**Buot Adrien** ](https://github.com/Bubu781 )
+* [**terre Mikhali** ](https://github.com/Mikhali)
+* [**Sabatey Clara** ](https://github.com/clarasbty)
+* [**Noiraux Coline** ](https://github.com/NoireauxColine)
+* [**Beurotte Marine** ](https://github.com/mama98)
 
 ## License
 
