@@ -1,34 +1,38 @@
 #include "sensors.hpp"
 
+/*
+*   Functions commons to all classes
+*/
+
+// Constructor of sensor, we initialize the variables
 Sensor::Sensor(int id, int pin, int address){
     this->id = id;
     this->pin = pin;
     this->address = address;
-    this->state = IDLE;
 }
 
-void Sensor::init(){
-
-}
-void Sensor::readSensor(){
-    
-}
-
+// setClient We set the client to send the update of the sensors
 void Sensor::setClient(WiFiClient client){
     this->client = client;
 }
 
+// setState we change the state of the sensor and send the information
 void Sensor::setState(typeState_t state){
     this->state = state;
     this->sendToActuator();
 }
 
+// sendToActuator we send a string to the client, to tell the actuator the action they should do
 void Sensor::sendToActuator(){
-    char stringToSend[50];
-    sprintf(stringToSend,"%d%d\r",this->id,this->state);
+    char stringToSend[2];
+    sprintf(stringToSend,"%c%c\r",this->id,this->state);
     if(this->client.connected()>0)
-        this->client.write(stringToSend);
+        this->client.print(stringToSend);
 }
+
+/*
+*   Functions concerning the short sensors
+*/
 
 SensorShort::SensorShort(int id, int pin, int address) : Sensor(id, pin, address){
     pinMode(this->pin, OUTPUT);
@@ -62,41 +66,46 @@ void SensorShort::readSensor(){
         }else if(measure.RangeMilliMeter > 1270 && this->state != IDLE){
             this->setState(IDLE);
         }
+    Serial.print("distance court n° ");
+    Serial.print(this->pin);
+    Serial.print(" : ");
+    Serial.println(measure.RangeMilliMeter);
     }else if(this->state != IDLE){
         this->setState(IDLE);
     }
 }
 
 SensorLong::SensorLong(int id, int pin, int address) : Sensor(id, pin, address){
-  this->distanceSensor = SFEVL53L1X(Wire, this->pin);
+    this->distanceSensor = SFEVL53L1X(Wire, this->pin);
+    Wire.begin();
+    this->distanceSensor.sensorOff();
 }
 
 void SensorLong::init(){
-  Wire.begin();
-
-  this->distanceSensor.sensorOff();
   this->distanceSensor.sensorOn();
   this->distanceSensor.setI2CAddress(this->address);
 
-  if (distanceSensor.begin() != 0) //Begin returns 0 on a good init
+  if (this->distanceSensor.begin() != 0) //Begin returns 0 on a good init
   {
     Serial.println("Sensor failed to begin. Please check wiring. Freezing...");
     while(1);
   }
 
-  distanceSensor.setDistanceModeLong();
+  this->distanceSensor.setDistanceModeLong();
+  Serial.println(this->distanceSensor.getI2CAddress());
 }
 
 void SensorLong::readSensor(){
-  distanceSensor.startRanging(); //Write configuration bytes to initiate measurement
-  while (!distanceSensor.checkForDataReady())
+  this->distanceSensor.startRanging(); //Write configuration bytes to initiate measurement
+  while (!this->distanceSensor.checkForDataReady())
   {
     delay(1);
   }
-  int distance = distanceSensor.getDistance(); //Get the result of the measurement from the sensor
-  distanceSensor.clearInterrupt();
-  distanceSensor.stopRanging();
-
+  int distance = this->distanceSensor.getDistance(); //Get the result of the measurement from the sensor
+    Serial.print("distance long : ");
+    Serial.println(distance);
+  this->distanceSensor.clearInterrupt();
+  this->distanceSensor.stopRanging();
   if(distance <= 3700) {
     if(distance >= 20 && distance <= 430 && this->state != HIGHENERGY){
         this->setState(HIGHENERGY);
@@ -110,8 +119,8 @@ void SensorLong::readSensor(){
   }else if(this->state != IDLE){
       this->setState(IDLE);
   }
-}
 
+}
 
 void SensorBottom::readSensor(){
 

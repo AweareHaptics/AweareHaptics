@@ -6,16 +6,15 @@
 #include <RangeSensor.h>
 #include <SparkFun_VL53L1X.h>
 #include <vl53l1x_class.h>
-#include <vl53l1_error_codes.h>
 #include <Wire.h>
+#include <vl53l1_error_codes.h>
 #include "SparkFun_VL53L1X.h" //Click here to get the library: http://librarymanager/All#SparkFun_VL53L1X
 
-
 typedef enum SensorState{
-    IDLE = 0,
-    LOWENERGY = 1,
-    MEDIUMENERGY = 2,
-    HIGHENERGY = 3
+    IDLE = 255,
+    LOWENERGY = 170,
+    MEDIUMENERGY = 85,
+    HIGHENERGY = 0
 }typeState_t;
 
 class Sensor{
@@ -34,9 +33,9 @@ protected:
 
 public:
     Sensor(int id, int pin, int address);
-    virtual void init();
+    virtual void init(){}
     void setClient(WiFiClient client);
-    virtual void readSensor();
+    virtual void readSensor(){}
 };
 
 class SensorShort : public Sensor{
