@@ -29,12 +29,12 @@ Notre veste sera composée de capteurs IR pour détecter la présence d’obstac
 Pour chaque moteur vous aurez besoin de :
 
 - faire faire un pcb néomotor : le fichier brd est dans le repo
-- résistance 10Ω boitier 0805 : [référence fabriquant : CRCW080510R0FKEA](https://fr.rs-online.com/web/p/resistances-cms/6790825/)
-- résistance 100Ω boitier 0805 : [référence fabriquant : CR0805-FX-1000ELF](https://fr.rs-online.com/web/p/resistances-cms/7408978/)
-- résistance 442Ω boitier 0805 : [référence fabriquant : ERA6AEB4420V](https://fr.rs-online.com/web/p/resistances-cms/7086023/)
-- résistance 4KΩ boitier 0805 : [référence fabriquant : CRCW08054K02FKEA](https://fr.rs-online.com/web/p/resistances-cms/6791471/)
-- Condensateur type 104 : 10nF, boitier 0805 : [référence fabriquant : CC0805KRX7R9BB103](https://fr.rs-online.com/web/p/condensateurs-ceramique-multicouches/4614013/)
-- transitor npn simple boitier SOT-32 : [référence fabriquant : MMBT3904LT1G](https://fr.rs-online.com/web/p/transistors-bipolaires-bjt/5450343/)
+- résistance 10Ω boitier 0805 : lien vers la [référence fabriquant : CRCW080510R0FKEA](https://fr.rs-online.com/web/p/resistances-cms/6790825/)
+- résistance 100Ω boitier 0805 : lien vers la [référence fabriquant : CR0805-FX-1000ELF](https://fr.rs-online.com/web/p/resistances-cms/7408978/)
+- résistance 442Ω boitier 0805 : lien vers la [référence fabriquant : ERA6AEB4420V](https://fr.rs-online.com/web/p/resistances-cms/7086023/)
+- résistance 4KΩ boitier 0805 : lien vers la [référence fabriquant : CRCW08054K02FKEA](https://fr.rs-online.com/web/p/resistances-cms/6791471/)
+- Condensateur type 104 : 10nF, boitier 0805 : lien vers la [référence fabriquant : CC0805KRX7R9BB103](https://fr.rs-online.com/web/p/condensateurs-ceramique-multicouches/4614013/)
+- transitor npn simple boitier SOT-32 : lien vers la [référence fabriquant : MMBT3904LT1G](https://fr.rs-online.com/web/p/transistors-bipolaires-bjt/5450343/)
 - moteur vibrant [Type Model NFP-P0716](https://nfpshop.com/product/7mm-vibration-motor-16mm-type-model-nfp-p0716-3v-12000rpm-7-3g-amplitude)
 
 ## Fabrication du pcb 
@@ -43,6 +43,21 @@ vous aurez besoin de commander ou bien de fabriquer des PCB, pour bien faire fon
 
 
  # Montage
+
+ ## branchement 
+ - brancher le GND de la movuino sur le GND du pcb
+ - brancher le +5V de la movuino sur le +5V du pcb
+ - brancher le +3V de la movuino sur le +3V du pcb
+ - brancher la pin D9 de la movuino sur le DIN du pcb
+ - brancher les deux fils sur moteur sur le bornes moteur du pcb. (le moteur n'est pas polarisé)
+
+brancher ensuite :
+ - le GND du pcb sur le GND du pcb suivant
+ - le +5V de pcb sur le +5V du pcb suivant
+ - le +3V de pcb sur le +3V du pcb suivant
+ - la pin D9 de pcb sur le DIN du pcb suivant
+ 
+ 
 
  ## code 
 
@@ -74,7 +89,7 @@ le serveur ne fait que recevoir des messages des clients. le message doit etre f
 
 
 ## Versions 
-Liste des versions : [Cliquer pour afficher les tags](https://github.com/AweareHaptics/AweareHaptics/tags)
+Liste des versions : [**Cliquer pour afficher les tags**](https://github.com/AweareHaptics/AweareHaptics/tags)
 
 
 
