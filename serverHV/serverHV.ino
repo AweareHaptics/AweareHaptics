@@ -1,5 +1,5 @@
-#include "./Sensors/sensors.hpp"
-#define NB_SENSORS 3
+#include "sensors.hpp"
+#define NB_SENSORS 2
 
 // Set these to your desired credentials.
 const char *Apssid = "Server Movuino";     //Give AccessPoint name whatever you like. (this will be Name of your esp32 HOTSPOT)
@@ -21,9 +21,9 @@ void setup() {
   /* 
     We initialize all sensors 
   */
-  sensors[0] = new SensorShort(1,15,0x30);
-  sensors[1] = new SensorShort(2,14,0x31);
-  sensors[2] = new SensorLong(0,27, 0x32);
+  sensors[0] = new SensorLong(0,27,0x30);
+  sensors[1] = new SensorShort(1,14,0x31);
+  //sensors[2] = new SensorLong(2,15, 0x32);
   for(int i = 0; i < NB_SENSORS; i++)
     sensors[i]->init();
 }
@@ -42,7 +42,7 @@ void loop() {
       for(int i = 0; i < NB_SENSORS; i++)
         sensors[i]->readSensor();
  
-      delay(10);
+      delay(100);
     }
  
     client.stop();
