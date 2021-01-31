@@ -115,13 +115,12 @@ void SensorLong::readSensor(){
     delay(1);
   }
   
-
   int distance = this->distanceSensor.getDistance(); //Get the result of the measurement from the sensor
   
   this->distanceSensor.clearInterrupt();
   this->distanceSensor.stopRanging();
 
-  if(distanceSensor.getRangeStatus() == 0)
+  if(distanceSensor.getRangeStatus() == 0) // Returns 0 if no errors are found 
   { 
     Serial.print("distance long : ");
     Serial.println(distance);
@@ -136,8 +135,7 @@ void SensorLong::readSensor(){
     }
   }else if(this->state != IDLE){
       this->setState(IDLE);
-  }
-  
+  } 
 }
 
 void SensorBottom::readSensor(){
