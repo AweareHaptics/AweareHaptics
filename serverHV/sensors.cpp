@@ -9,6 +9,8 @@ Sensor::Sensor(int id, int pin, int address){
     this->id = id;
     this->pin = pin;
     this->address = address;
+    Serial.print("sensor id:");
+    Serial.println(this->id);
 }
 
 // setClient We set the client to send the update of the sensors
@@ -18,16 +20,27 @@ void Sensor::setClient(WiFiClient client){
 
 // setState we change the state of the sensor and send the information
 void Sensor::setState(typeState_t state){
+
+      Serial.print("  id : ");
+      Serial.println(this->id);
+      Serial.print("  state : ");
+      Serial.println(state);
     this->state = state;
     this->sendToActuator();
 }
 
 // sendToActuator we send a string to the client, to tell the actuator the action they should do
 void Sensor::sendToActuator(){
-    char stringToSend[2];
-    sprintf(stringToSend,"%c%c\r",this->id,this->state);
+  uint8_t data[2];
+  data[0] = this->id;
+  data[1] = this->state;
     if(this->client.connected()>0)
-        this->client.print(stringToSend);
+        this->client.write(data,2);
+  /*Serial.print("data0:");
+  Serial.println(data[0]);
+  Serial.print("data1:");
+  Serial.println(data[1]);*/
+  
 }
 
 /*
@@ -66,10 +79,10 @@ void SensorShort::readSensor(){
         }else if(measure.RangeMilliMeter > 1270 && this->state != IDLE){
             this->setState(IDLE);
         }
-    Serial.print("distance court n° ");
-    Serial.print(this->pin);
-    Serial.print(" : ");
-    Serial.println(measure.RangeMilliMeter);
+    //Serial.print("distance court n° ");
+    //Serial.print(this->pin);
+    //Serial.print(" : ");
+    //Serial.println(measure.RangeMilliMeter);
     }else if(this->state != IDLE){
         this->setState(IDLE);
     }
@@ -101,25 +114,28 @@ void SensorLong::readSensor(){
   {
     delay(1);
   }
+  
   int distance = this->distanceSensor.getDistance(); //Get the result of the measurement from the sensor
-    Serial.print("distance long : ");
-    Serial.println(distance);
+  
   this->distanceSensor.clearInterrupt();
   this->distanceSensor.stopRanging();
-  if(distance <= 3700) {
-    if(distance >= 20 && distance <= 430 && this->state != HIGHENERGY){
+
+  if(distanceSensor.getRangeStatus() == 0) // Returns 0 if no errors are found 
+  { 
+    Serial.print("distance long : ");
+    Serial.println(distance);
+    if(distance >= 40 && distance <= 1000 && this->state != HIGHENERGY){
         this->setState(HIGHENERGY);
-    }else if(distance > 430 && distance <= 840 && this->state != MEDIUMENERGY ){
+    }else if(distance > 1000 && distance <= 1500 && this->state != MEDIUMENERGY ){
         this->setState(MEDIUMENERGY);
-    }else if(distance > 840 && distance < 1270 && this->state != LOWENERGY){
+    }else if(distance > 1500 && distance < 2200 && this->state != LOWENERGY){
         this->setState(LOWENERGY);
-    }else if(distance > 1270 && this->state != IDLE){
+    }else if(distance > 2200 && this->state != IDLE){
         this->setState(IDLE);
     }
   }else if(this->state != IDLE){
       this->setState(IDLE);
-  }
-
+  } 
 }
 
 void SensorBottom::readSensor(){

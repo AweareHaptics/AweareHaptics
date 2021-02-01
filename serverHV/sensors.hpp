@@ -48,12 +48,35 @@ public:
     virtual void readSensor();
 };
 
+/*
+ * @brief SensorLong inherits from the Sensor class. It is a simple wrapper around the SFEVL53L1X class.
+ * 
+ * It allows you to declare and use a VL53L1X sensor ("long range" type - 4m) with a common API used accross all sensors.
+ */
 class SensorLong : public Sensor{
 protected:
     SFEVL53L1X distanceSensor;
 public:
+
+    /* 
+     * @brief Create an instance of SensorLong
+     * 
+     * @param id unique identifier used to represent the sensors to use with actuators
+     * @param pin used to shutdown the sensor for I2C 
+     * @param address unique I2C physical address
+     * 
+     * @return newly initialized sensor
+     */
     SensorLong(int id, int pin, int address);
+
+   /* 
+   * @brief Initialize the sensor
+   */
     void init();
+    
+    /*
+     * @brief Read the sensor's data and sends the appropriate state to the actuators
+     */
     void readSensor();
 };
 
