@@ -121,8 +121,9 @@ Solder a line for 5V, a line for GND, a line for SCL and a line for SDA.
 
 ![Schematics sensor](schema_capteurs.png)
 
-Schema des pins du VL53L1X :
-![VL53L1X pins](VL53L1X_pins.png)
+Schematics for the VL53L1X corresponding pins :
+
+![VL53L1X pins](VL53L1X_pins.PNG)
 
 ## Wiring
 
@@ -296,7 +297,7 @@ faire une ligne 5V, une ligne GND, une ligne SCL et une ligne SDA
 ![Schema Capteur](schema_capteurs.png)
 
 Schema des pins du VL53L1X :
-![Schema Capteur](VL53L1X_pins.png)
+![VL53L1X pins](VL53L1X_pins.PNG)
 
 ## Branchements
 
