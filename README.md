@@ -45,7 +45,6 @@ Pour chaque moteur vous aurez besoin de :
 
 vous aurez besoin de commander ou bien de fabriquer des PCB, pour bien faire fonctionner les moteurs vibrant
 
-
 ## Montage
 
 AJOUTER SCHEMA
@@ -62,8 +61,6 @@ brancher ensuite :
  - le +5V de pcb sur le +5V du pcb suivant
  - le +3V de pcb sur le +3V du pcb suivant
  - la pin D9 de pcb sur le DIN du pcb suivant
- 
- 
 
 ## Code 
 
@@ -74,9 +71,7 @@ la carte moovuino devient un serveur socket sur l'adresse 192.168.4.2
 
 le serveur ne fait que recevoir des messages des clients. le message doit etre formaté un string cntenant le numéo de l'actuateur à faire vibrer, ainsi qu'une intensité ayant une valeur comprise entre 0 et 3 
 
-## Souder les PCB
-
-
+## Souder les PCBd
 
 ## Monter..
 
@@ -91,11 +86,16 @@ https://www.amazon.fr/TECNOIOT-VL53L0X-Flight-Distance-GY-VL53L0XV2/dp/B084BTP47
 
 ## Elaboration de la plaque de prototypage 
 
-Mettre photo + description : ( tres simple : faire une ligne 5V, une ligne GND, une ligne SCL, une ligne SDA)
+METTRE PHOTO DE LA PLAQUE
+
+faire une ligne 5V, une ligne GND, une ligne SCL et une ligne SDA
 
 ## Montage
 
 ![Schema Capteur](schema_capteurs.png)
+
+Schema des pins du VL53L1X :
+![Schema Capteur](VL53L1X_pins.png)
 
 ## Branchements
 
