@@ -22,7 +22,10 @@ Ce qu'il est requis pour commencer avec votre projet du point de vue du matérie
 
 # Démarrage
 
-Notre veste sera composée de capteurs IR pour détecter la présence d’obstacle et de movuino pour transmettre l’information aux actuateurs présent sur la veste. L’emplacement des vibreurs a été déterminés par la réalisation d’une cartographie de sensibilité.
+Notre veste sera composée de capteurs infrarouge pour détecter la présence d’obstacle et de movuino pour transmettre l’information aux actuateurs présent sur la veste. L’emplacement des vibreurs a été déterminés par la réalisation d’une cartographie de sensibilité.
+
+
+#  Partie moteurs actuateurs
 
 ## Matériel
 
@@ -37,14 +40,17 @@ Pour chaque moteur vous aurez besoin de :
 - transitor npn simple boitier SOT-32 : lien vers la [référence fabriquant : MMBT3904LT1G](https://fr.rs-online.com/web/p/transistors-bipolaires-bjt/5450343/)
 - moteur vibrant [Type Model NFP-P0716](https://nfpshop.com/product/7mm-vibration-motor-16mm-type-model-nfp-p0716-3v-12000rpm-7-3g-amplitude)
 
-## Fabrication du pcb 
+
+## Fabrication du pcb
 
 vous aurez besoin de commander ou bien de fabriquer des PCB, pour bien faire fonctionner les moteurs vibrant
 
 
- # Montage
+## Montage
 
- ## branchement 
+AJOUTER SCHEMA
+
+## Branchements
  - brancher le GND de la movuino sur le GND du pcb
  - brancher le +5V de la movuino sur le +5V du pcb
  - brancher le +3V de la movuino sur le +3V du pcb
@@ -59,24 +65,54 @@ brancher ensuite :
  
  
 
- ## code 
+## Code 
 
-téléverser le code source sue la movuino
+téléverser le code source sur la movuino
 
 la carte moovuino devient un serveur socket sur l'adresse 192.168.4.2
 1 client max peut s'y connecter : ce nombre est modifiable dans le fichier ... : le define BN_CLIENT // TODO : dire ne nom du fichier  
 
 le serveur ne fait que recevoir des messages des clients. le message doit etre formaté un string cntenant le numéo de l'actuateur à faire vibrer, ainsi qu'une intensité ayant une valeur comprise entre 0 et 3 
 
- ## souder les PCB
+## Souder les PCB
 
 
 
- ## monter..
+## Monter..
 
+#  Partie capteurs infrarouge
 
+## Matériel
 
+- Plaque de prototypage : lien vers la [référence fabriquant : 743635] https://fr.rs-online.com/web/p/cartes-matrices/4853892/
+- Capteur infrarouge VL53L0X TECNOIOT (mesure jusqu'à 2m) : lien vers la [référence fabriquant : A513-VL53L0X-297-5PCS ]
+https://www.amazon.fr/TECNOIOT-VL53L0X-Flight-Distance-GY-VL53L0XV2/dp/B084BTP479/ref=sr_1_6?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=6Q645XXPDDA7&dchild=1&keywords=lidar+arduino&qid=1606946373&sprefix=lidar+%2Caps%2C326&sr=8-6
+- Capteur infrarouge VL53L1X STMicroelectronics (mesure jusqu'à 4m): lien vers la [référence fabriquant : VL53L1X-SATEL] https://fr.rs-online.com/web/p/modules-de-developpement-pour-capteurs/1827794/?cm_mmc=FR-PPC-DS3A-_-bing-_-3_FR_FR_Modules+de+d%C3%A9veloppement+pour+capteurs_STMicroelectronics_Exact-_-STMicroelectronics+-+Modules+de+d%C3%A9veloppement+pour+capteurs+-+1827794-_-vl53l1x+satel&matchtype=e&kwd-71743717917902:loc-66&gclid=534000e661d01b55fc8760f1bc5fa77a&gclsrc=3p.ds&msclkid=534000e661d01b55fc8760f1bc5fa77a
 
+## Elaboration de la plaque de prototypage 
+
+Mettre photo + description : ( tres simple : faire une ligne 5V, une ligne GND, une ligne SCL, une ligne SDA)
+
+## Montage
+
+![Schema Capteur](schema_capteurs.png)
+
+## Branchements
+
+ - brancher le GND de la movuino sur une ligne de la plaque 
+ - brancher le +3V de la movuino sur une ligne de la plaque 
+ - brancher la pin SCL de la movuino sur une ligne de la plaque
+ - brancher la pin SDA de la movuino sur une ligne de la plaque
+
+brancher ensuite pour chaque capteurs :
+
+ - brancher la pin GND du capteur a la ligne GND de la plaque
+ - brancher la pin VIN/VDD du capteur a la ligne 3V de la plaque
+ - brancher la pin SCL du capteur a la ligne SCL de la plaque
+ - brancher la pin SDA du capteur a la ligne SDA de la plaque
+ - brancher la pin D3, D4, D5... de la movuino sur le XSHUT des capteurs VL53L0X ou XSDN pour les capteurs VL53L1X.
+
+## Code 
 
 # Auteurs
 
