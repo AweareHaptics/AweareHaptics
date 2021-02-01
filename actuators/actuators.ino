@@ -22,7 +22,7 @@ void setup() {
   pixels.begin();
   //We set the actuators to low
   for(int i = 0; i< NB_ACTUATORS; i++){
-    pixels.setPixelColor(i, pixels.Color(255,0,0));
+    pixels.setPixelColor(i, pixels.Color(0,255,0));
   }
   //We send the data to actuators
   pixels.show();  
@@ -55,7 +55,7 @@ void loop() {
         //If there is an actuator related to the sensor
         if(line[ACTUATOR_ID] < NB_ACTUATORS){
           //We change the state of the actuator
-          pixels.setPixelColor(line[ACTUATOR_ID], pixels.Color(line[INTENSITY],0,0));
+          pixels.setPixelColor(line[ACTUATOR_ID], pixels.Color(0,line[INTENSITY],0));
           pixels.show();
         }
         delay(10);

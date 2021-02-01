@@ -137,7 +137,3 @@ void SensorLong::readSensor(){
       this->setState(IDLE);
   } 
 }
-
-void SensorBottom::readSensor(){
-
-}
