@@ -1,7 +1,5 @@
 # AweareHaptics
 
-[![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/built-by-developers.svg)](http://forthebadge.com) [![forthebadge](http://forthebadge.com/images/badges/powered-by-electricity.svg)](http://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/cc-nc-sa.svg)](http://forthebadge.com)
-
 Nowadays, the french population amounts more than 207 000 blind people and more than a million people suffer from visual defficiencies. According to the OMS, the number of visually impaired people should triple by 2050. Currently, the support tools developed and available for these people are not technologically advanced and often require significant purchase costs. We therefore decided to develop a tool to help with spatial orientation, accessible to all, for the blind or visually impaired.
 
 **Aweare Haptics is an open source project on the development of a haptic vest allowing the blind or visually impaired to orient themselves in their surrounding environment.**
