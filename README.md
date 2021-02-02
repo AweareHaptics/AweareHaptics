@@ -51,7 +51,6 @@ This folder is composed of two folders :
 - "Motors" contains the code to upload to the movuino that operates the motors
 - "Sensors" contains the code to upload to the movuino that operates the sensors
 
-Ces 2 codes gèrent la connexion wifi. La partie moteur s'occupe du serveur tandis que les capteurs sont une partie client
 The code manages the wifi connection. The motor part takes care of setting up the server whereas the sensors represent the hotspot/client.
 
 #  Motor Actuators
@@ -71,12 +70,9 @@ For every motor used you'll need the following components:
 
 ## Setting up the PCB
 
-vous aurez besoin de commander ou bien de fabriquer des PCB, pour bien faire fonctionner les moteurs vibrant
 You'll need to order or make your own PCB with the brd file found on this repository to make the motors work.
 
 ## Mounting/Assembly
-
-AJOUTER SCHEMA
 
 ## Wiring
  - Connect the GND pin of the movuino to the IN GND pin of the pcb
@@ -115,8 +111,6 @@ https://www.amazon.fr/TECNOIOT-VL53L0X-Flight-Distance-GY-VL53L0XV2/dp/B084BTP47
 
 ## Setting up the prototyping plate
 
-METTRE PHOTO DE LA PLAQUE
-
 Solder a line for 5V, a line for GND, a line for SCL and a line for SDA.
 
 ## Mouting/Assembly
@@ -148,10 +142,6 @@ Connect then for every sensor:
 # Sensibility protocole
 
 Sensibility mapping process:
-
-Avant de commencer la cartographie, il faut préparer l'environnement de travail.
-Ce protocole est à réaliser sur le corps de la personne qui portera la veste.
-Pour réaliser ce protocole, il faut se munir d'un moteur vibrant branché à une puissance de 3,3V.
 
 Before getting started with the mapping, you'll need to prepare your work environment.
 You'll need to carry out the protocole by using the body proportions of the person wearing the vest.
@@ -247,7 +237,6 @@ Pour chaque moteur vous aurez besoin de :
 - transitor npn simple boitier SOT-32 : lien vers la [référence fabriquant : MMBT3904LT1G](https://fr.rs-online.com/web/p/transistors-bipolaires-bjt/5450343/)
 - moteur vibrant [Type Model NFP-P0716](https://nfpshop.com/product/7mm-vibration-motor-16mm-type-model-nfp-p0716-3v-12000rpm-7-3g-amplitude)
 
-
 ## Fabrication du pcb
 
 vous aurez besoin de commander ou bien de fabriquer des PCB, pour bien faire fonctionner les moteurs vibrant
@@ -273,8 +262,8 @@ brancher ensuite :
 
 téléverser le code source sur la movuino
 
-la carte moovuino devient un serveur socket sur l'adresse 192.168.4.2
-1 client max peut s'y connecter : ce nombre est modifiable dans le fichier ... : le define BN_CLIENT // TODO : dire ne nom du fichier  
+la carte movuino devient un serveur socket sur l'adresse 192.168.4.2
+1 client max peut s'y connecter : ce nombre est modifiable dans le fichier ... : le define BN_CLIENT // TODO : dire le nom du fichier  
 
 le serveur ne fait que recevoir des messages des clients. le message doit etre formaté un string cntenant le numéo de l'actuateur à faire vibrer, ainsi qu'une intensité ayant une valeur comprise entre 0 et 3 
 
