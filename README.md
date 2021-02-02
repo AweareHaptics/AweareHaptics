@@ -56,6 +56,8 @@ The code manages the wifi connection. The motor part takes care of setting up th
 
 ## Required hardware
 
+![Haptic Vest wiring and components position](images/actuateurs+capteurs.bmp)
+
 For every motor used you'll need the following components:
 - Néomotor PCB: you can find our brd file in the repository
 - SMD resistor 10Ω type 0805 : link to [manufacturer reference : CRCW080510R0FKEA](https://fr.rs-online.com/web/p/resistances-cms/6790825/)
@@ -119,11 +121,11 @@ Solder a line for 5V, a line for GND, a line for SCL and a line for SDA.
 
 ## Mouting/Assembly
 
-![Schematics sensor](schema_capteurs.png)
+![Schematics sensor](images/schema_capteurs.png)
 
 Schematics for the VL53L1X corresponding pins :
 
-![VL53L1X pins](VL53L1X_pins.PNG)
+![VL53L1X pins](images/VL53L1X_pins.PNG)
 
 ## Wiring
 
@@ -231,6 +233,8 @@ Notre veste sera composée de capteurs infrarouge pour détecter la présence d�
 
 ## Matériel
 
+![Veste haptique branchement et placement des composants](images/actuateurs+capteurs.bmp)
+
 Pour chaque moteur vous aurez besoin de :
 
 - faire faire un pcb néomotor : le fichier brd est dans le repo
@@ -294,10 +298,10 @@ faire une ligne 5V, une ligne GND, une ligne SCL et une ligne SDA
 
 ## Montage
 
-![Schema Capteur](schema_capteurs.png)
+![Schema Capteur](images/schema_capteurs.png)
 
 Schema des pins du VL53L1X :
-![VL53L1X pins](VL53L1X_pins.PNG)
+![VL53L1X pins](images/VL53L1X_pins.PNG)
 
 ## Branchements
 
