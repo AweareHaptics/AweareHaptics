@@ -96,6 +96,27 @@ The server receives messages from the clients. The messages need to be formated 
 
 ## Solder the PCB
 
+The motors PCB are made to all be in series of one another. The first PCB has its 3.3V to the 3 Volts battery. The 5V is connected to the movuino's 5V. Then the DIN is connected to the D4 pin of the movuino. The ground is conected to the shared ground of the movuino and the 3V battery.
+
+For the I/Os of the other PCB, the OUT first board is directly linked to the IN of the second board. The OUT of the second is connected to the IN of the third and continue until all your motor controller are linked. The OUT of the last board doesn't need to be connected anywhere.
+
+For the Motor pins, you just need to connect them to a exentric mass vibration motor. They can be wired in both direction.
+
+For each PCB you also have to solder the resistors, capacitor, transistor and the microcontroller.
+
+### soldering the passive components :
+
+R1 is the 400 Ohms resistor.
+R2 is the 4K Ohms resistor.
+R3 is the 100 Ohms resistor.
+R4 is the 10 Ohms resistor.
+C1 is the capacitor.
+
+### soldering the Microcontroller :
+
+To solder the MicroController you have to put the tiny hole such as it is facing you and in the top left. Then you can solder it to the board. 
+
+
 ## Mounting
 
 # Infrared Sensors
@@ -113,13 +134,37 @@ Solder a line for 5V, a line for GND, a line for SCL and a line for SDA.
 
 ## Mouting/Assembly
 
-![Schematics sensor](images/schema_capteurs.png)
+## VLX53L0X pins
+
+### Board description
+
+Take the board with its captor facing you and in the right side of the board. The pins are in the left side. From top to bottom we have :
+
+- Vin 
+- Ground
+- SCL
+- SDA
+- GPIO1 (unused for this project)
+- XSHUT
+
+## VLX53L1X pins
 
 Schematics for the VL53L1X corresponding pins :
 
-![VL53L1X pins](images/VL53L1X_pins.PNG)
+![VL53L1X pins](VL53L1X_pins.PNG)
+
+### Schematic description
+
+Take the board with its captor facing you and in the right side of the board. The pins are in the left side. The most bottom left is the INT pin, it is unused for this project. The one above the INT pin is the XSDN pin. Above the XSDN pin is the Vdd pin. Right to Vdd is the ground pin. Below the ground you have the SDA pin. And below SDA is SCL. All other pin are unused.
+
 
 ## Wiring
+
+### Wiring schematic :
+
+![Schematics sensor](schema_capteurs.png)
+
+### Schematic description
 
  - Connect the GND pin of the movuino to any line on the prototyping plate which becomes its designated line. (GND)
  - Connect the +3V pin of the movuino to any line on the prototyping plate which becomes its designated line. (+3V)
@@ -128,7 +173,7 @@ Schematics for the VL53L1X corresponding pins :
 
 Connect then for every sensor:
 
- - Connect the GND pin of the sensor to the designated GND line on the prototyping plate
+ - Connect the GND pin of the sensor to the desigLnated GND line on the prototyping plate
  - Connect the VIN/VDD pin of the sensor to the designated +3V line on the prototyping plate
  - Connect the SCL pin of the sensor to the designated SCL line on the prototyping plate
  - Connect the SDA pin of the sensor to the designated SDA line on the prototyping plate
