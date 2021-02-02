@@ -98,11 +98,11 @@ The server receives messages from the clients. The messages need to be formated 
 
 ## Solder the PCB
 
-## Mouting...
+## Mounting
 
-#Infrared Sensors
+# Infrared Sensors
 
-##Required hardware
+## Required hardware
 
 - Prototyping plate : link to [manufacturer reference  : 743635] https://fr.rs-online.com/web/p/cartes-matrices/4853892/
 - Infrared sensor VL53L0X TECNOIOT (measures up to 2 meters) : link to [manufacturer reference : A513-VL53L0X-297-5PCS ]
@@ -170,7 +170,7 @@ We'll seperate the torso, the back and the arms into different testing areas.
  --Area 3 : left shoulder
  --Area 4 : left arm 
 
-##Second step : Mapping out the sensitive areas
+## Second step : Mapping out the sensitive areas
 
 - Start by powering up the motor with a voltage of 3.3V.
 WARNING : In order for the mapping to be correct, the motor needs to be supplied with a constant voltage of 3.3V for the duration of the tests.
