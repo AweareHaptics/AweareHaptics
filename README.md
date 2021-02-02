@@ -151,7 +151,7 @@ Take the board with its captor facing you and in the right side of the board. Th
 
 Schematics for the VL53L1X corresponding pins :
 
-![VL53L1X pins](VL53L1X_pins.PNG)
+![VL53L1X pins](images/VL53L1X_pins.PNG)
 
 ### Schematic description
 
@@ -162,7 +162,7 @@ Take the board with its captor facing you and in the right side of the board. Th
 
 ### Wiring schematic :
 
-![Schematics sensor](schema_capteurs.png)
+![Schematics sensor](images/schema_capteurs.png)
 
 ### Schematic description
 
