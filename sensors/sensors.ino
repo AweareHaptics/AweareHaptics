@@ -1,5 +1,5 @@
 #include "sensors.hpp"
-#define NB_SENSORS 2
+#define NB_SENSORS 6
 
 const char *Apssid = "Server Movuino"; //Name of the hotspot wifi
 const char *Appassword = "P@ssw0rd"; //password
@@ -24,9 +24,14 @@ void setup() {
   /* 
     We initialize all sensors 
   */
-  sensors[0] = new SensorLong(0,27,0x30);
-  sensors[1] = new SensorShort(1,14,0x31);
-  //sensors[2] = new SensorLong(2,15, 0x32);
+  sensors[0] = new SensorShort(2,26,0x33); // left shoulder
+  sensors[1] = new SensorShort(5,27,0x34); // right shoulder
+  sensors[2] = new SensorShort(4,14,0x35); // right back
+  sensors[3] = new SensorShort(8,15,0x37); // right lower front
+  sensors[4] = new SensorShort(6,33,0x40); // head
+  sensors[5] = new SensorShort(0,25,0x39); // left lower front
+  //sensors[6] = new SensorLong(7,4,0x30);
+  
   for(int i = 0; i < NB_SENSORS; i++)
     sensors[i]->init();
 }

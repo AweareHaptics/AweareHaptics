@@ -61,6 +61,7 @@ void SensorShort::init(){
     digitalWrite(this->pin, HIGH);
     if(!this->lox.begin(this->address)) {
         Serial.println("Failed to boot a VL53L0X");
+        Serial.println(this->pin);
         while(1);
     }
     delay(10);
@@ -101,6 +102,7 @@ void SensorLong::init(){
   if (this->distanceSensor.begin() != 0) //Begin returns 0 on a good init
   {
     Serial.println("Sensor failed to begin. Please check wiring. Freezing...");
+    Serial.println(this->pin);
     while(1);
   }
 
