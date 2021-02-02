@@ -23,6 +23,8 @@ List of hardware required to get started with your project:
 
 The haptic vest is composed of infrared sensors to detect obstacles, 2 movuinos to transfer instructions to the motor actuators sewn to the vest. The location of the vibrators was determined by performing a sensitivity mapping. 
 
+![Haptic Vest wiring and components position](images/actuateurs+capteurs.bmp)
+
 
 # Brief
 
@@ -55,8 +57,6 @@ The code manages the wifi connection. The motor part takes care of setting up th
 #  Motor Actuators
 
 ## Required hardware
-
-![Haptic Vest wiring and components position](images/actuateurs+capteurs.bmp)
 
 For every motor used you'll need the following components:
 - Néomotor PCB: you can find our brd file in the repository
@@ -228,12 +228,13 @@ Ce qu'il est requis pour commencer avec votre projet du point de vue du matérie
 
 Notre veste sera composée de capteurs infrarouge pour détecter la présence d’obstacle et de movuino pour transmettre l’information aux actuateurs présent sur la veste. L’emplacement des vibreurs a été déterminés par la réalisation d’une cartographie de sensibilité.
 
+![Veste haptique branchement et placement des composants](images/actuateurs+capteurs.bmp)
+
 
 #  Partie moteurs actuateurs
 
 ## Matériel
 
-![Veste haptique branchement et placement des composants](images/actuateurs+capteurs.bmp)
 
 Pour chaque moteur vous aurez besoin de :
 
